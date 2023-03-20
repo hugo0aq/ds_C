@@ -1,17 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct Node {
+typedef struct Node {    //typedef struct 定义链表节点并赋名便于定义
 	int data;
 	struct Node *link;
 } Node;
 
-int  isEmpty(Node *L);
-Node *Insert(Node *head, int num);
-void Print(Node *head);
+int  isEmpty(Node *L);  //判断空链表函数声明，空链表返回1
+Node *Insert(Node *head, int num); //head节点插入函数声明
+void Print(Node *head); //head节点起遍历链表函数声明
 
 int main() {
-	Node *head;
+	Node *head;    //定义head指针，指向链表第一个节点
 	head = NULL;
 	int n, i, x;
 	printf("Enter the number of data:\n");
