@@ -6,7 +6,8 @@ typedef struct Node {
 	struct Node *link;
 
 } Node;
-Node *Node_Init(int elem);
+
+Node *Node_Init(int elem);  //建立一个链表节点
 
 void main() {
 	Node *A;
