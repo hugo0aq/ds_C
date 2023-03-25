@@ -1,6 +1,6 @@
 #数据结构
 ---
-##C程序内存分配 
+##C/C++程序内存分配 
 + **栈(stack)**：编译器自动分配和释放内存，存放函数参数值和==局部变量==等；
 + **堆(heap)**：程序员分配释放，如链表节点存放于堆；  
 + **全局静态(static)**：全局和静态变量存储，程序结束后系统释放；  
@@ -36,8 +36,19 @@
   (*tmp)->link=NULL;/*tmp赋值*/
   A=tmp;
   ```
+   
+   * **头部插入一个节点**：代码见/1_list/head_insert/;==注意节点指针和头指针是否为全局变量==  
+   * **打印一个链表**：代码见/1_list/node_test/node.cpp;注意递归和迭代区别；
+   * **任意位置插入节点**：代码见/1_list/node_test/node.cpp;
+   * **任意位置删除节点**：代码见/1_list/node_test/node.cpp;==注意释放内存delete==
+   * **反转链表**：代码见/1_list/node_test/node.cpp==注意head是局部变量,并且注意递归时的返回值==  
   
-   * **头部插入一个节点**：代码见/1_list/head_insert/;==注意节点指针和头指针是否为全局变量==
-   * **任意位置插入节点**：代码见/1_list/insert_node/;
-   * **任意位置删除节点**：代码见/1_list/delete_node/;==注意释放内存free(* ptr)==
-   * **反转链表**：代码见/1_list/reverse_iteration/;==注意head是局部变量==
++ **双向链表**：有两个指针，一个指前节点一个指后节点；   
+  ```c
+  typedef struct Node{
+    int data;
+    struct Node *prev;
+    struct Node *next;
+  }Node;
+  ```
+  * **头部/尾部插入节点**：代码见/1_list/double_link_list;
