@@ -1,0 +1,39 @@
+# Project: stack_usage
+# Makefile created by Dev-C++ 5.16
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+RES      = stack_usage_private.res
+OBJ      = main.o node.o CheckBalance.o $(RES)
+LINKOBJ  = main.o node.o CheckBalance.o $(RES)
+LIBS     = -L"D:/Dev-Cpp/MinGW64/lib" -L"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -g3
+INCS     = -I"D:/Dev-Cpp/MinGW64/include" -I"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/8.1.0/include"
+CXXINCS  = -I"D:/Dev-Cpp/MinGW64/include" -I"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/8.1.0/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"
+BIN      = stack_usage.exe
+CXXFLAGS = $(CXXINCS) -Wextra -g3 -pipe
+CFLAGS   = $(INCS) -Wextra -g3 -pipe
+RM       = del /q
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+node.o: node.cpp
+	$(CPP) -c node.cpp -o node.o $(CXXFLAGS)
+
+CheckBalance.o: CheckBalance.cpp
+	$(CPP) -c CheckBalance.cpp -o CheckBalance.o $(CXXFLAGS)
+
+stack_usage_private.res: stack_usage_private.rc 
+	$(WINDRES) -i stack_usage_private.rc --input-format=rc -o stack_usage_private.res -O coff 
+
