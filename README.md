@@ -1,5 +1,6 @@
-# DATA STRUCTURE NOTES
 
+# DATA STRUCTURE NOTES
+  learn from mycodeschool
 # 数据结构
 ---
 ## C/C++程序内存分配 
@@ -76,6 +77,7 @@
   * **检查括号匹配**：代码见/2_stack/stack_usage/CheckBalance.cpp;
   * **前缀后缀表达式求值**
 
+
 ## 队列ADT  
 + **队列(Queue)**:  队列也是一种线性表，可以用数组或是链表来实现。  
   - 特点：先入先出的原则。先存入队列的数据，要先取出。后存入的要后取出  
@@ -84,7 +86,8 @@
    (2)出队；
    (3)返回头或尾数据；
    (4)判断是否为空； 
-   - 应用：
+  - 应用：
    (1)处理进程队列  
-
-  
+  - 实现：
+    * **数组实现队列**：代码见/3_queue/array_imple;  
+    * **链表实现队列**：代码见/3_queue/list_imple;  
